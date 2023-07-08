@@ -177,20 +177,17 @@ public:
     int v;
     Vertex *vertexes;
     vector<Edge> *adj;
-
     // in the heap two vertexes are compared according to their f values
     static bool compare(Vertex *v1, Vertex *v2)
     {
         return v1->f > v2->f;
     }
-
     // updating the vertex , they are doing the manhattan distance
     int hManhattan(Vertex v1, Vertex v2)
     {
         return abs(v1.x - v2.x) + abs(v1.y - v2.y);
         // Manhattan distance
     }
-
     void print(int s, int t, int *predecessor)
     {
         if (s == t)
@@ -265,13 +262,12 @@ int main()
     // g.astar(12, 11);
     // g.hillClimbing(12, 11);
 
-    //g.astar(13, 9);        // 13->3 ->2 ->1 ->0 ->5 ->9  : 220
-    //g.hillClimbing(13, 9); // 13 -> 6 -> 7 -> 11 -> 10 -> 9 : 290
-     g.astar(0,10);
+    // g.astar(13, 9);        // 13->3 ->2 ->1 ->0 ->5 ->9  : 220
+    // g.hillClimbing(13, 9); // 13 -> 6 -> 7 -> 11 -> 10 -> 9 : 290
+    g.astar(0, 10);
 
-     g.astar(3,9);
-     g.hillClimbing(3,9);
-
+    g.astar(3, 9);
+    g.hillClimbing(3, 9);
 
     // g.astar(9, 13);
     // g.hillClimbing(9, 13);
@@ -283,51 +279,51 @@ int main()
     run the program and see the result, type : g++ -std=c++11 astar.cpp; and type:  ./a.out or you have code runner, just control+alt+n
     */
 
-     //example 2:
-     Graph g1(9);
+    // example 2:
+    Graph g1(9);
 
-        g1.addEdge(0, 1, 2);
-        g1.addEdge(0, 2, 4);
-        g1.addEdge(0, 3, 5);
-        g1.addEdge(1, 4, 7);
-        g1.addEdge(1, 5, 8);
-        g1.addEdge(2, 6, 9);
-        g1.addEdge(3, 7, 10);
-        g1.addEdge(3, 8, 12);
-        g1.addEdge(7, 8, 2);
+    g1.addEdge(0, 1, 2);
+    g1.addEdge(0, 2, 4);
+    g1.addEdge(0, 3, 5);
+    g1.addEdge(1, 4, 7);
+    g1.addEdge(1, 5, 8);
+    g1.addEdge(2, 6, 9);
+    g1.addEdge(3, 7, 10);
+    g1.addEdge(3, 8, 12);
+    g1.addEdge(7, 8, 2);
 
-        g1.addVertex(0, 0, 0);
-        g1.addVertex(1, 2, 2);
-        g1.addVertex(2, 4, 1);
-        g1.addVertex(3, 5, 4);
-        g1.addVertex(4, 7, 2);
-        g1.addVertex(5, 8, 4);
-        g1.addVertex(6, 6, 6);
-        g1.addVertex(7, 3, 7);
-        g1.addVertex(8, 4, 8);
+    g1.addVertex(0, 0, 0);
+    g1.addVertex(1, 2, 2);
+    g1.addVertex(2, 4, 1);
+    g1.addVertex(3, 5, 4);
+    g1.addVertex(4, 7, 2);
+    g1.addVertex(5, 8, 4);
+    g1.addVertex(6, 6, 6);
+    g1.addVertex(7, 3, 7);
+    g1.addVertex(8, 4, 8);
 
-        g1.astar(0,6);
-        g1.hillClimbing(0,6);
-        g1.astar(0,4);
-        g1.hillClimbing(0,4);
-        g1.astar(0,8);
-        g1.hillClimbing(0,8);
-        
-/*
-     how to print the vertex distance check
-      g1.astar(0,4);  // find shortest path from vertex 0 to vertex 4 using A* algorithm
+    g1.astar(0, 6);
+    g1.hillClimbing(0, 6);
+    g1.astar(0, 4);
+    g1.hillClimbing(0, 4);
+    g1.astar(0, 8);
+    g1.hillClimbing(0, 8);
 
-        for (int i = 0; i < 6; ++i) {
-            cout << "vertex " << i << " distance x coordinate : " << g.vertexes[i].x << endl;
-            cout << "vertex " << i << " distance y coordinate : " << g.vertexes[i].y << endl;
-        }
+    /*
+         how to print the vertex distance check
+          g1.astar(0,4);  // find shortest path from vertex 0 to vertex 4 using A* algorithm
 
-        for (int i = 0; i < 5; ++i) {
-            cout << "vertex " << i << " distance x coordiante : " << g1.vertexes[i].y << endl;
-            cout << "vertex " << i << " distance y coordinate : " << g1.vertexes[i].y << endl;
-        }
+            for (int i = 0; i < 6; ++i) {
+                cout << "vertex " << i << " distance x coordinate : " << g.vertexes[i].x << endl;
+                cout << "vertex " << i << " distance y coordinate : " << g.vertexes[i].y << endl;
+            }
 
-     */
+            for (int i = 0; i < 5; ++i) {
+                cout << "vertex " << i << " distance x coordiante : " << g1.vertexes[i].y << endl;
+                cout << "vertex " << i << " distance y coordinate : " << g1.vertexes[i].y << endl;
+            }
+
+         */
     return 0;
 }
 
