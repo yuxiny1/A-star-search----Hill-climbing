@@ -312,17 +312,14 @@ int main()
     /*
          how to print the vertex distance check
           g1.astar(0,4);  // find shortest path from vertex 0 to vertex 4 using A* algorithm
-
             for (int i = 0; i < 6; ++i) {
                 cout << "vertex " << i << " distance x coordinate : " << g.vertexes[i].x << endl;
                 cout << "vertex " << i << " distance y coordinate : " << g.vertexes[i].y << endl;
             }
-
             for (int i = 0; i < 5; ++i) {
                 cout << "vertex " << i << " distance x coordiante : " << g1.vertexes[i].y << endl;
                 cout << "vertex " << i << " distance y coordinate : " << g1.vertexes[i].y << endl;
             }
-
          */
     return 0;
 }
